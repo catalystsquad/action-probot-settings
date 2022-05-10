@@ -1,5 +1,5 @@
 const settings = require('probot-settings')
-import SettingsApp from 'probot-settings/lib/settings'
+const SettingsApp = require('probot-settings/lib/settings')
 /**
  * @param {import('probot').Probot} app
  */
