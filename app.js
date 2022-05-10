@@ -1,14 +1,14 @@
-const Settings = require('probot-settings/lib/settings')
-const mergeArrayByName = require("probot-settings/lib/mergeArrayByName");
+import mergeArrayByName from 'probot-settings/lib/mergeArrayByName.js'
+import SettingsApp from 'probot-settings/lib/settings.js'
 /**
  * @param {import('probot').Probot} robot
  */
 module.exports = (robot) => {
-    console.log(`type of settings: ${typeof Settings}`)
-    console.log.info(`Settings.FILE_NAME: ${Settings.FILE_NAME}`)
+    robot.log.info(`type of settings: ${typeof SettingsApp}`)
+    robot.log.info(`Settings.FILE_NAME: ${SettingsApp.FILE_NAME}`)
     async function syncSettings (context, repo = context.repo()) {
         const config = await context.config('settings.yml', {}, { arrayMerge: mergeArrayByName })
-        return Settings.sync(context.octokit, repo, config)
+        return SettingsApp.sync(context.octokit, repo, config)
     }
 
     robot.on('push', async context => {
