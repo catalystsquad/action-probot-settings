@@ -1,0 +1,12 @@
+name: Apply Settings
+on:
+  push:
+    branches:
+      - troubleshoot
+jobs:
+  conventional-commits-pr:
+    name: Validate Conventional Commits PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: crazy-max/ghaction-dump-context@v1
+      - uses: catalystsquad/action-probot-settings@troubleshoot
