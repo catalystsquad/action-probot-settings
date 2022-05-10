@@ -1,25 +1,24 @@
 {
-  "name": "action-javascript-action-template",
+  "name": "action-probot-settings",
   "version": "1.0.0",
-  "description": "An action to build from for javascript actions",
+  "description": "Executes the Probot Settings plugin in a Github action",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/catalystsquad/action-javascript-action-template.git"
+    "url": "git+https://github.com/catalystsquad/action-probot-settings.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/catalystsquad/action-javascript-action-template/issues"
+    "url": "https://github.com/catalystsquad/action-probot-settings/issues"
   },
-  "homepage": "https://github.com/catalystsquad/action-javascript-action-template#readme",
+  "homepage": "https://github.com/catalystsquad/action-probot-settings#readme",
   "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0"
-  },
-  "devDependencies": {}
+    "@probot/adapter-github-actions": "^3.1.1",
+    "probot-settings": "github:probot/settings"
+  }
 }
