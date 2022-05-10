@@ -2,4 +2,4 @@ name: 'Probot Settings'
 description: 'Executes the Probot Settings plugin in a Github action'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: 'index.js'
