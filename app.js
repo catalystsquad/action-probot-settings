@@ -1,13 +1,13 @@
 
 /**
  * @param {import('probot').Probot} robot
+ * @param {import('probot-settings/lib/settings')} settings
  */
-module.exports = (robot) => {
+module.exports = (robot, settings) => {
     const mergeArrayByName = require("probot-settings/lib/mergeArrayByName");
-    const Settings = require("probot-settings/lib/settings");
     async function syncSettings (context, repo = context.repo()) {
         const config = await context.config('settings.yml', {}, { arrayMerge: mergeArrayByName })
-        return Settings.sync(context.octokit, repo, config)
+        return settings.sync(context.octokit, repo, config)
     }
 
     robot.on('push', async context => {
