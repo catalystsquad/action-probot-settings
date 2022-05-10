@@ -1,7 +1,4 @@
-const { run } = require('@probot/adapter-github-actions')
-const { settings } = require('probot-settings')
+const { run } = require("@probot/adapter-github-actions");
+const app = require("./app");
 
-run(settings).catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+run(app);

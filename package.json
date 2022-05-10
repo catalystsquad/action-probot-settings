@@ -4,7 +4,8 @@
   "description": "Executes the Probot Settings plugin in a Github action",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,11 @@
     "@probot/adapter-github-actions": "^3.1.1",
     "probot-settings": "github:probot/settings"
   },
-  "type": "commonjs"
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@zeit/ncc": "^0.22.3",
+    "semantic-release": "^19.0.2",
+    "nock": "^13.2.4",
+    "uvu": "^0.5.3"
+  }
 }
