@@ -3,7 +3,7 @@ import SettingsApp from 'probot-settings/lib/settings.js'
 /**
  * @param {import('probot').Probot} robot
  */
-module.exports = (robot) => {
+export default (robot) => {
     robot.log.info(`type of settings: ${typeof SettingsApp}`)
     robot.log.info(`Settings.FILE_NAME: ${SettingsApp.FILE_NAME}`)
     async function syncSettings (context, repo = context.repo()) {
