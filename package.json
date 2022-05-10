@@ -20,5 +20,6 @@
   "dependencies": {
     "@probot/adapter-github-actions": "^3.1.1",
     "probot-settings": "github:probot/settings"
-  }
+  },
+  "type": "module"
 }

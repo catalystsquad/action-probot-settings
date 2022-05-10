@@ -5,7 +5,7 @@ on:
       - troubleshoot
 jobs:
   conventional-commits-pr:
-    name: Validate Conventional Commits PR
+    name: Apply Settings
     runs-on: ubuntu-latest
     steps:
       - uses: crazy-max/ghaction-dump-context@v1
