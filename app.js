@@ -20,14 +20,14 @@ module.exports = (robot) => {
             return
         }
 
-        const settingsModified = payload.commits.find(commit => {
-            return commit.added.includes(Settings.FILE_NAME) || commit.modified.includes(Settings.FILE_NAME)
-        })
+        // const settingsModified = payload.commits.find(commit => {
+        //     return commit.added.includes(Settings.FILE_NAME) || commit.modified.includes(Settings.FILE_NAME)
+        // })
 
-        if (!settingsModified) {
-            robot.log.info(`No changes in '${Settings.FILE_NAME}' detected, returning...`)
-            return
-        }
+        // if (!settingsModified) {
+        //     robot.log.info(`No changes in '${Settings.FILE_NAME}' detected, returning...`)
+        //     return
+        // }
 
         return syncSettings(context)
     })
