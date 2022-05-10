@@ -12,3 +12,4 @@ jobs:
       - uses: catalystsquad/action-probot-settings@troubleshoot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOG_LEVEL: debug
