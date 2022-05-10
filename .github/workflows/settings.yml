@@ -10,3 +10,5 @@ jobs:
     steps:
       - uses: crazy-max/ghaction-dump-context@v1
       - uses: catalystsquad/action-probot-settings@troubleshoot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
