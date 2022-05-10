@@ -4,7 +4,9 @@
 module.exports = (app) => {
     const SettingsApp = require('probot-settings/lib/settings')
     const settings = require('probot-settings')
+    app.log.info(`debug level enabled: ${app.log.isLevelEnabled("debug")}`)
     app.log.level = "debug"
+    app.log.info(`debug level enabled: ${app.log.isLevelEnabled("debug")}`)
     app.log.info("Yay! The app was loaded!");
     app.log.debug("testing debug logging")
     settings.default(app, null, Settings = SettingsApp)
