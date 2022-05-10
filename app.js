@@ -1,10 +1,9 @@
-const settings = require('probot-settings')
-const SettingsApp = require('probot-settings/lib/settings')
-let Settings = require("probot-settings/lib/settings");
 /**
  * @param {import('probot').Probot} app
+ * @param {import('probot-settings')} settings
  */
-module.exports = (app) => {
+module.exports = (app, settings,) => {
+    const SettingsApp = require('probot-settings/lib/settings')
     app.log("Yay! The app was loaded!");
     settings.default(app, null, Settings = SettingsApp)
     app.log("Yay! Settings ran maybe!")
