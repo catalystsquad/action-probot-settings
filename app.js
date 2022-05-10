@@ -16,7 +16,7 @@ module.exports = (robot) => {
 
         const defaultBranch = payload.ref === 'refs/heads/' + repository.default_branch
         if (!defaultBranch) {
-            robot.log.debug('Not working on the default branch, returning...')
+            robot.log.info('Not working on the default branch, returning...')
             return
         }
 
@@ -25,7 +25,7 @@ module.exports = (robot) => {
         })
 
         if (!settingsModified) {
-            robot.log.debug(`No changes in '${Settings.FILE_NAME}' detected, returning...`)
+            robot.log.info(`No changes in '${Settings.FILE_NAME}' detected, returning...`)
             return
         }
 
@@ -37,11 +37,11 @@ module.exports = (robot) => {
         const { changes, repository } = payload
 
         if (!Object.prototype.hasOwnProperty.call(changes, 'default_branch')) {
-            robot.log.debug('Repository configuration was edited but the default branch was not affected, returning...')
+            robot.log.info('Repository configuration was edited but the default branch was not affected, returning...')
             return
         }
 
-        robot.log.debug(`Default branch changed from '${changes.default_branch.from}' to '${repository.default_branch}'`)
+        robot.log.info(`Default branch changed from '${changes.default_branch.from}' to '${repository.default_branch}'`)
 
         return syncSettings(context)
     })
