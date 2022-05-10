@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: crazy-max/ghaction-dump-context@v1
+      - uses: actions/checkout@v3
+      - uses: crazy-max/ghaction-dump-context@v1
       - uses: catalystsquad/action-probot-settings@troubleshoot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LOG_LEVEL: debug
